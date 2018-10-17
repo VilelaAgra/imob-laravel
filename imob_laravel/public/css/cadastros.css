@@ -1,0 +1,86 @@
+#campo{
+    margin-bottom: 10px;
+    font: bold 14px san-serif;
+}
+
+#campo label select {
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.644);
+    border-radius: 3px;
+    font: bold 14px san-serif;
+}
+
+label{
+    margin-block-end: 20px;
+}
+
+#campo input{
+    margin-bottom: 10px;
+    margin-right: 50px;
+    background-color: rgba(255, 255, 255, 0.644);
+    border-radius: 3px;
+}
+
+#campo textarea{
+    background-color: rgba(255, 255, 255, 0.644);
+    border-radius: 3px;
+}
+
+#campo textarea:hover{
+    background-color: #e0f1fc;
+}
+
+#campo input:hover{
+    background-color: #e0f1fc;
+
+}
+
+input[type="number"] {
+    width:50px;
+ }
+
+#campo2{
+    font: bold 14px san-serif;
+    margin-bottom: 10px;
+}
+
+#campo2 input{
+    background-color: rgba(255, 255, 255, 0.644);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+#campo2 input:hover{
+    background-color: #e0f1fc;
+}
+
+#btn-salvar {
+    width: 510px;
+    margin-right: 25px;
+}
+
+#botao-salvar {
+    float: left;
+    font: bold 16px san-serif;
+    border-radius: 10px;
+    text-shadow: 0px 1px white;
+    border: 1px solid rgb(139, 138, 138);
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f7fbfc+0,d9edf2+40,add9e4+100;Blue+3D+%231 */
+    background: #f7fbfc;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f7fbfc 0%, #d9edf2 40%, #add9e4 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f7fbfc 0%, #d9edf2 40%, #add9e4 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f7fbfc 0%, #d9edf2 40%, #add9e4 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4', GradientType=0);
+    /* IE6-9 */
+
+    color: black;
+    box-shadow: #c9c9c9;
+    
+
+}
