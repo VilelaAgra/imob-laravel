@@ -19,25 +19,37 @@
         <h1 id="h1-estilo">SisImob - Soluções Imobiliárias</h1>
     </div>
 
-    {{-- LEMBRAR DE ALTERAR AQUI --}}
-    <form action="/home" method="post">
-       @csrf
+   
+    @if (session('erro'))
+    <!-- LOGIN ou SENHA INCORRETA -->
+        <div class="alert alert-danger">
+            <strong>Erro!</strong> {{session('erro')}}
+            <?php echo ('erro')?>
+        </div>
+        <!-- FIM [LOGIN OU SENHA INCORRETA] -->
+    @endif
+
+
+    <form action="{{route('logar')}}" method="post">
+        {{ csrf_field() }}
+        
         <div id="lgn">
             <div id="lgn-int">
                 
                 <div id="lgn-txt">LOGIN</div>
                 
                 <div class="campos_input" #id="usuario_input"> 
-                    <input type="text" id="cpf" placeholder="CPF"/>
+                    <input type="text" name='cpf' id="cpf" placeholder="CPF"/>
                 </div>
                 
                 <div class="campos_input" #id="senha_input">
-                    <input type="password" id="senha" placeholder="Senha"/>
+                    <input type="password" name='senha' id="senha" placeholder="Senha"/>
                 </div>
                 
                 <div id="buttons">
                     <div>
                         <input id="botao" type="submit" value="Entrar">
+
                     </div>
                     
                 </div>

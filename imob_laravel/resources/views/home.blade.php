@@ -21,9 +21,9 @@
 
     <nav>
         <ul class="menu">
-            <li><a href="login.html">Home</a>
+            <li><a href="{{ route('login') }}">Home</a>
                 <ul>
-                    <li><a href="login.html">Autenticação</a></li>
+                    <li><a href="{{ route('logout') }}">Sair</a></li>
                 </ul>
             </li>
             <li><a href="#">Imóvel</a>
