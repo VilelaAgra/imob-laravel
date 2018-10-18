@@ -17,15 +17,15 @@ public function cadastrar() {
 
 public function salvar(Request $request) {
     $request->validate([
-        'tipoimovel'    => 'required',
-        'classificacao' => 'required',
-        'classificacao' => 'required',
-        'situacao'      => 'required',
-        'valorimovel'   => 'required',
-        'iptu'          => 'required'
+        'Tipo do Imóvel'    => 'required',
+        'Classificação' => 'required',
+        'Situação'      => 'required',
+        'Valor do Imóvel'   => 'required|numeric',
+        'iptu'          => 'required|numeric'
+
+
     ]);
-    
-    
+
 
     return redirect()->route('imovel.cadastrar')->with('msg', 'Dados salvo com sucesso');    
 }
@@ -37,101 +37,3 @@ public function buscar() {
 }
 
 }
-
-    // /**
-    //  * =========== CRUD ==============
-    //  */
-
-    // /** Abre a View com a listagem de livros */
-    // public function listar(Request $request) {
-
-    //     //Paginação
-    //     $exibirPorPagina = 5;
-    //     $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
-    //     $paginacao = Livro::paginate($exibirPorPagina); //Exibe 5 elementos por página
-
-    //     $livros = Livro::limit($exibirPorPagina) //Quantos valores devem ser exibido 
-    //                     ->offset($offset) //Começa a exibir a apartir de qual valor
-    //                     ->get();
-        
-    //     $dados = [
-    //         'submenu'   => 'listar',
-    //         'livros'    => $livros,
-    //         'paginacao' => $paginacao
-    //     ];
-    //     return view('livros.listar', $dados);
-    // }
-    
-    // /** Abre a view com os dados do livro selecionado */
-    // public function visualizar(int $id) {
-    //     $dados['livro'] = Livro::find($id);
-    //     switch($dados['livro']['categoria']) {
-    //         case 1: $dados['livro']['categoria_nome'] = 'Terror'; break;
-    //         case 2: $dados['livro']['categoria_nome'] = 'Drama'; break;
-    //         case 3: $dados['livro']['categoria_nome'] = 'Romance'; break;
-    //         case 4: $dados['livro']['categoria_nome'] = 'Ficção Cientifica'; break;
-    //         case 5: $dados['livro']['categoria_nome'] = 'Pintura'; break;
-    //    }
-         
-    //     return view('livros.visualizar', $dados);
-    // }
-   
-    // /** Abre a view com a tela de cadastro */
-    // public function cadastrar() {
-    //     $dados = ['submenu' => 'cadastrar', 'livro' => new Livro()];
-    //     return view('livros.cadastro', $dados);
-    // }
-
-    // /** Tentar cadastrar o livro */
-    // public function salvar(Request $request) {
-    //     $request->validate([
-    //         'isbn'      => 'required|integer',
-    //         'titulo'    => 'required',
-    //         'autor'     => 'required',
-    //         'resumo'    => 'required',
-    //         'capa'      => 'image|required'
-    //     ]);
-        
-    //     //Cadastra e recupera o livro cadastrado
-    //     $livro = Livro::create($request->all());
-        
-    //     //Salva capa do livro
-    //     $this->salvaCapa($livro, $request);
-
-    //     return redirect()->route('livros.listar');
-    // }
-
-    // /** Abre a tela com a view de edição do livro */
-    // public function editar(int $id) {
-    //     $livro = Livro::find($id);
-    //     return view('livros.edicao', ['livro' => $livro]);
-    // }
-
-    // /** Tenta atualizar o livro */
-    // public function atualizar(Request $request, $id) {
-    //     $request->validate([
-    //         'isbn'      => 'required|integer',
-    //         'titulo'    => 'required',
-    //         'autor'     => 'required',
-    //         'resumo'    => 'required',
-    //         'capa'      => 'image|max:1024'
-    //     ]);
-
-    //     Livro::where('id', $id)->update($request->except(['_token']));
-
-    //     //Checa se houve tentativa de cadastrar nova capa 
-    //     if ($request->has('capa')) {
-    //         $livro = Livro::find($id);
-    //         $this->salvaCapa($livro, $request);
-    //     }
-
-    //     return redirect()->route('livros.listar');
-    // }
-
-    // /** Remove um livro do banco */
-    // public function excluir($id) {
-    //     Livro::destroy($id);
-    //     return redirect()->route('livros.listar');
-    // }
-
-
