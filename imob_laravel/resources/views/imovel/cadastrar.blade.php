@@ -1,7 +1,7 @@
 {{-- COLOCAR OS JAVASCRIPT DO WEBSERVICE --}}
-
 @extends('home')
 @section('conteudo_principal')
+    
     <div>
         <h2>CADASTRAR IMÓVEL</h2>
     </div>
@@ -10,22 +10,31 @@
     
     <form action="{{route('imovel.salvar')}}" enctype="multipart/form-data" method="post">
      {{ csrf_field() }}
-        @if (session('not'))
-        <!-- VALIDAÇÃO DOS DADOS -->
-        <div class="alert alert-danger">
-            <strong>Erro!</strong> {{session('not')}}
-        </div>
-        <!-- VALIDAÇÃO DOS DADOS -->
-        @endif
         
+        @if ($errors->any())
+        <div class="alert alert-danger" style="color: firebrick">
+            <strong>Erro!</strong>
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+        @endif
+       
+        @if (session('msg'))
+        <!-- LOGIN ou SENHA INCORRETA -->
+            <div class="alert alert-danger" style="color: green">
+                <strong></strong> {{session('msg')}}  
+            </div>
+        <!-- FIM [LOGIN OU SENHA INCORRETA] -->
+        @endif 
+
         <fieldset id="campo">
             <legend>Dados do Imóvel</legend>
 
-            <label for="cod-imovel">Código:
+            {{-- <label for="cod-imovel">Código:
                 <input type="number" name="id_imovel" id="cod-imovel" value="" />
- 
             </label>
-            <br/>
+            <br/> --}}
 
             <label for="tipo-imovel">Tipo do Imóvel:
                 <select name="tipoimovel" id="tipo-imovel">
@@ -35,38 +44,46 @@
                     <option value="3">Chácara</option>
                 </select>
             </label>
+            
             <br/>
+            
             <label for="classificacao">Classificação:
                 <select name="classificacao" id="classificacao">
                     <option value="">Selecione</option>
                     <option value="1">Residencial</option>
                     <option value="2">Comercial</option>
-
                 </select>
             </label>
-            </label>
+
             <br/>
+
             <label for="situacao">Situação:
                 <select name="situacao" id="situacao">
                     <option value="">Selecione</option>
                     <option value="1" >Disponivel</option>
                     <option value="2" >Reservado</option>
                     <option value="3" >Vendido</option>
-
                 </select>
             </label>
+
             <br/>
+
             <label for="valor-imovel">Valor do Imóvel:
-                <input name="valorimovel" type="text" id="valor-imovel" value="" />
+                <input name="valorimovel" type="text" id="valor-imovel" />
             </label>
+
             <br/>
+
             <label for="iptu">IPTU:
-                <input name="iptu" type="text" id="iptu" value="" />
+                <input name="iptu" type="text" id="iptu" />
             </label>
+
             <br/>
-            <label for="obs">Observações:
-                <textarea name="obs" id="obs" cols="30" rows="1" draggable="false" value=""></textarea>
-            </label>
+
+            {{-- <label for="obs">Observações:
+                <textarea name="obs" id="obs"></textarea>
+            </label> --}}
+
         </fieldset>
 
         <fieldset id="campo2">
@@ -96,12 +113,16 @@
             <br/>
 
         </fieldset>
+        
         <br/>
+        
         <div id="btn-salvar">
             <input id="botao-salvar" type="submit" value="Salvar">
-        </div>
+        </div> 
+
     </form>
-    @endsection
+
+@endsection
 
 
 <!-- Código
@@ -119,7 +140,7 @@ Area total
 quarto 
 banheiro
 Area de Servio
-Salad e Janar
+Sala de Janar
 Valor do Imovel
 PITU
 Observações

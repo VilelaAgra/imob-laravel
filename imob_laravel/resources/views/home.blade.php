@@ -5,6 +5,7 @@
 
     <title>SisImob - Sistema Imobiliario</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href={{asset('css/login.css')}} type="text/css">
     <link rel="stylesheet" href={{asset('css/home.css')}} type="text/css">
     <link rel="stylesheet" href={{asset('css/buscas.css')}} type="text/css">
     <link rel="stylesheet" href={{asset('css/cadastros.css')}} type="text/css">
@@ -16,10 +17,10 @@
     <div id="bloco-1">
         <figure id="figura">
             <img src="{{ asset('img/logo.jpg') }}" />
+            <h1 id="h1-estilo">SisImob - Soluções Imobiliárias</h1>
         </figure>
-        <h1 id="h1-estilo">SisImob - Soluções Imobiliárias</h1>
     </div>
-
+    
     <nav>
         <ul class="menu">
             <li><a href="{{ route('login') }}">Home</a>

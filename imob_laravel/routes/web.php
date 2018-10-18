@@ -14,7 +14,7 @@ Route::get('home', function () {
 Route::group(['prefix' => 'imovel', 'middleware' => ['login']], function () {
     Route::get('/','ImovelController@buscar')->name('imovel.buscar');
     Route::get('/novo', 'ImovelController@cadastrar')->name('imovel.cadastrar');
-    Route::post('/salvar', 'ImovelController@cadastrar')->name('imovel.salvar');
+    Route::post('/salvar', 'ImovelController@salvar')->name('imovel.salvar');
 });
 
 //GRUPO DE ROTAS DE FUNCIONÁRIOS

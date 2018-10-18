@@ -14,21 +14,10 @@
 
     <div id="bloco-1">
         <figure id="figura">
-            <img src="img/slogo.jpg" alt="">
+            <img src="{{ asset('img/logo.jpg') }}" />
+            <h1 id="h1-estilo">SisImob - Soluções Imobiliárias</h1>
         </figure>
-        <h1 id="h1-estilo">SisImob - Soluções Imobiliárias</h1>
     </div>
-
-   
-    @if (session('erro'))
-    <!-- LOGIN ou SENHA INCORRETA -->
-        <div class="alert alert-danger">
-            <strong>Erro!</strong> {{session('erro')}}
-            
-        </div>
-        <!-- FIM [LOGIN OU SENHA INCORRETA] -->
-    @endif
-
 
     <form action="{{route('logar')}}" method="post">
         {{ csrf_field() }}
@@ -49,9 +38,15 @@
                 <div id="buttons">
                     <div>
                         <input id="botao" type="submit" value="Entrar">
-
                     </div>
-                    
+                
+                @if (session('erro'))
+                    <!-- LOGIN ou SENHA INCORRETA -->
+                        <div class="alert alert-danger">
+                            <strong>Erro!</strong> {{session('erro')}}  
+                        </div>
+                        <!-- FIM [LOGIN OU SENHA INCORRETA] -->
+                @endif    
                 </div>
             </div>
         </div>

@@ -22,11 +22,12 @@ public function salvar(Request $request) {
         'classificacao' => 'required',
         'situacao'      => 'required',
         'valorimovel'   => 'required',
-        'iptu'          => 'required',
-        'obs'           => 'required'
+        'iptu'          => 'required'
     ]);
+    
+    
 
-    return redirect()->route('imovel.buscar');    
+    return redirect()->route('imovel.cadastrar')->with('msg', 'Dados salvo com sucesso');    
 }
 
 // Abre a tela com a view buscar imovel

@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Imovel extends Model
 {
 
-    protected $fillable = ['tipoimovel','classificacao', 'classificacao', 'situacao', 'valorimovel', 'iptu', 'obs'];
+    protected $fillable = [
+        'tipoimovel',
+        'classificacao',
+        'situacao',
+        'valorimovel',
+        'iptu'
+    ];
 
 
 
