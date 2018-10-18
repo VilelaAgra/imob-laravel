@@ -7,28 +7,41 @@
     </div>
 
 
-    <form action="home.html" method="POST">
+    
+    <form action="{{route('imovel.salvar')}}" enctype="multipart/form-data" method="post">
+     {{ csrf_field() }}
+        @if (session('not'))
+        <!-- VALIDAÇÃO DOS DADOS -->
+        <div class="alert alert-danger">
+            <strong>Erro!</strong> {{session('not')}}
+        </div>
+        <!-- VALIDAÇÃO DOS DADOS -->
+        @endif
+        
         <fieldset id="campo">
             <legend>Dados do Imóvel</legend>
 
             <label for="cod-imovel">Código:
-                <input type="number" name="cod-imovel" id="cod-imovel" />
+                <input type="number" name="id_imovel" id="cod-imovel" value="" />
+ 
             </label>
             <br/>
+
             <label for="tipo-imovel">Tipo do Imóvel:
-                <select name="tipo-imovel" id="tipo-imovel">
+                <select name="tipoimovel" id="tipo-imovel">
                     <option value="">Selecione</option>
-                    <option value="apt">Apartamento</option>
-                    <option value="cs">Casa</option>
-                    <option value="cha">Chácara</option>
+                    <option value="1">Apartamento</option>
+                    <option value="2">Casa</option>
+                    <option value="3">Chácara</option>
                 </select>
             </label>
             <br/>
             <label for="classificacao">Classificação:
                 <select name="classificacao" id="classificacao">
                     <option value="">Selecione</option>
-                    <option value="resid">Residencial</option>
-                    <option value="comerc">Comercial</option>
+                    <option value="1">Residencial</option>
+                    <option value="2">Comercial</option>
+
                 </select>
             </label>
             </label>
@@ -36,22 +49,23 @@
             <label for="situacao">Situação:
                 <select name="situacao" id="situacao">
                     <option value="">Selecione</option>
-                    <option value="disp">Disponivel</option>
-                    <option value="reser">Reservado</option>
-                    <option value="vend">Vendido</option>
+                    <option value="1" >Disponivel</option>
+                    <option value="2" >Reservado</option>
+                    <option value="3" >Vendido</option>
+
                 </select>
             </label>
             <br/>
             <label for="valor-imovel">Valor do Imóvel:
-                <input name="valor-imovel" type="text" id="valor-imovel" size="10" />
+                <input name="valorimovel" type="text" id="valor-imovel" value="" />
             </label>
             <br/>
             <label for="iptu">IPTU:
-                <input name="iptu" type="text" id="iptu" size="10" />
+                <input name="iptu" type="text" id="iptu" value="" />
             </label>
             <br/>
             <label for="obs">Observações:
-                <textarea name="obs" id="obs" cols="30" rows="1"></textarea>
+                <textarea name="obs" id="obs" cols="30" rows="1" draggable="false" value=""></textarea>
             </label>
         </fieldset>
 

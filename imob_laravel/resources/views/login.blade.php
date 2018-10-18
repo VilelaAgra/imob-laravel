@@ -24,7 +24,7 @@
     <!-- LOGIN ou SENHA INCORRETA -->
         <div class="alert alert-danger">
             <strong>Erro!</strong> {{session('erro')}}
-            <?php echo ('erro')?>
+            
         </div>
         <!-- FIM [LOGIN OU SENHA INCORRETA] -->
     @endif
