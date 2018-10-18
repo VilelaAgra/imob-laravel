@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="<?php echo asset('css/home.css')?>" type="text/css">
     <link rel="stylesheet" href="<?php echo asset('css/buscas.css')?>" type="text/css">
     <link rel="stylesheet" href="<?php echo asset('css/cadastros.css')?>" type="text/css">
+    <script type="text/javascript" src="<?php echo asset('js/webserviceCEP.js')?>"></script>
 </head>
 
 <body>
 
     <div id="bloco-1">
         <figure id="figura">
-            <img src="img/logo.jpg" alt="">
+            <img src="{{ asset('img/logo.jpg') }}" />
         </figure>
         <h1 id="h1-estilo">SisImob - Soluções Imobiliárias</h1>
     </div>
