@@ -17,16 +17,29 @@ public function cadastrar() {
 
 public function salvar(Request $request) {
     $request->validate([
-        'Tipo do Imóvel'    => 'required',
-        'Classificação' => 'required',
-        'Situação'      => 'required',
-        'Valor do Imóvel'   => 'required|numeric',
-        'iptu'          => 'required|numeric'
-
+        'tipoimovel'        => 'required',
+        'classificacao'     => 'required',
+        'situacao'          => 'required',
+        'areatotal'         => 'required|numeric',
+        'valorimovel'       => 'required|numeric',
+        'valorcondominio'   => 'required|numeric',
+        'sala'              => 'required|integer',
+        'quarto'            => 'required|integer',
+        'banheiro'          => 'required|integer',
+        'garagem'           => 'required|integer',
+        'areaservico'       => 'required|integer',
+        'salajantar'        => 'required|integer',
+        'salaestar'         => 'required|integer',
+        'idadeimovel'       => 'required|integer',
+        'iptu'              => 'required|numeric',
+        'obs'               => 'required'
 
     ]);
-
-
+    
+    //Cadastra e recupera o imovel cadastrado
+    $imovel = Imovel::create($request->all());
+        
+    
     return redirect()->route('imovel.cadastrar')->with('msg', 'Dados salvo com sucesso');    
 }
 

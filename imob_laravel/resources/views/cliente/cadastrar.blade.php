@@ -17,38 +17,38 @@
             <label class="control-label">Tipo</label>
                 <select class="control-menor">
                     <option value="">Selecione</option>
-                    <option value="comp">Físico</option>
-                    <option value="prop">Jurídico</option>
+                    <option value="1">Físico</option>
+                    <option value="2">Jurídico</option>
                 </select>
         </div>
 
         <div class="control-group">
             <label class="control-label">Nome</label>
-            <input class="control" name="nome-cli" type="text" id="nome-cli"/>
+            <input class="control" name="nome-cli" type="text"/>
         </div>
 
         <div class="control-group">
             <label class="control-label">Perfil</label>
                 <select class="control-menor">
                     <option value="">Selecione</option>
-                    <option value="comp">Comprador</option>
-                    <option value="prop">Proprietário</option>
+                    <option value="1">Comprador</option>
+                    <option value="2">Proprietário</option>
                 </select>
         </div>
 
         <div class="control-group">
             <label class="control-label">CPF</label>
-            <input class="control-medio" name="cpf" type="text" id="cpf" />
+            <input class="control-medio" name="cpf" type="text" />
         </div>
 
         <div class="control-group">
             <label class="control-label">CNPJ</label>
-            <input class="control-medio" name="cpf" type="text" id="cnpj" />
+            <input class="control-medio" name="cnpj" type="text"/>
         </div>
 
         <div class="control-group">
             <label class="control-label">RG/UF</label>
-            <input class="control-medio" name="cpf" type="text" id="rg_uf" />
+            <input class="control-medio" name="cpf" type="text"/>
         </div>
        
         <div class="control-group">
@@ -58,22 +58,22 @@
 
         <div class="control-group">
             <label class="control-label">Telefone</label>
-            <input class="control-medio" name="cpf" type="text" id="rg_uf" />
+            <input class="control-medio" name="telefone" type="text" />
         </div>
 
         <div class="control-group">
             <label class="control-label">Celular</label>
-            <input class="control-medio" name="cpf" type="text" id="rg_uf" />
+            <input class="control-medio" name="celular" type="text" />
         </div>
 
         <div class="control-group">
             <label class="control-label">E-mail</label>
-            <input class="control" name="cpf" type="text" id="rg_uf" />
+            <input class="control" name="cpf" type="email"/>
         </div>
 
         <div class="control-group">
             <label class="control-label">Observações</label>
-            <input class="control" name="obs" type="text" id="rg_uf" />
+            <input class="control" name="obs" type="text"/>
         </div>
         <br>
         <div id="btn-salvar">

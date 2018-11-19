@@ -11,8 +11,19 @@ class Imovel extends Model
         'tipoimovel',
         'classificacao',
         'situacao',
+        'areatotal',
         'valorimovel',
-        'iptu'
+        'valorcondominio',
+        'sala',
+        'quarto',
+        'banheiro',
+        'garagem',
+        'areaservico',
+        'salajantar',
+        'salaestar',
+        'idadeimovel',
+        'iptu',
+        'obs'
     ];
 
 
