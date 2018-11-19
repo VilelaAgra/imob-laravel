@@ -1,92 +1,123 @@
 @extends('home')
 @section('conteudo_principal')
 
-    <div>
-        <h2>CADASTRAR FUNCIONÁRIO</h2>
-    </div>
+
+<div>
+    <h2>CADASTRAR FUNCIONÁRIO</h2>
+</div>
 
 
-    <form action="home.html" method="POST">
-        <fieldset id="campo">
-            <legend>Dados do Funcionário</legend>
+<form action="home.html" method="POST" class="form">
+    
+    <div class="section">
+        
+    <h3 id="h3-estilo">Dados do Cliente</h3>
 
-            <label for="funcao">Função:
-                <select name="funcao" id="funcao">
+        <div class="control-group">
+            <label class="control-label">Função</label>
+                <select class="control-menor">
                     <option value="">Selecione</option>
                     <option value="adm">Administrador</option>
                     <option value="ger">Gerente</option>
                     <option value="cor">Corretor</option>
                 </select>
-            </label>
-            <br/>
+        </div>
 
-            <label for="nome-func">Nome do Funcionário:
-                <input name="nome-func" type="text" id="nome-func" size="50" />
-            </label>
-            <br/>
+        <div class="control-group">
+            <label class="control-label">Nome</label>
+            <input class="control" name="nome-cli" type="text"/>
+        </div>
 
-            <label for="senha">Senha:
-                <input name="senha" type="password" id="senha" size="8" maxlength="8" />
-            </label>
-            <br/>
+        <div class="control-group">
+            <label class="control-label">Senha</label>
+            <input class="control-medio" name="cpf" type="text"/>
+        </div>
 
-            <label for="cpf">CPF:
-                <input name="cpf" type="text" id="cpf" size="14" />
-            </label>
-            <br/>
+        <div class="control-group">
+            <label class="control-label">CPF</label>
+            <input class="control-medio" name="cpf" type="text" />
+        </div>
 
-            <label for="rg">RG:
-                <input name="rg" type="text" id="rg" size="20" />
-            </label>
-            <br/>
+        <div class="control-group">
+            <label class="control-label">RG/UF</label>
+            <input class="control-medio" name="rg-uf" type="text" />
+        </div>
+       
+        <div class="control-group">
+            <label class="control-label">Data de Nascimento</label>
+            <input class="control-menor" name="datanascimento" type="date" />
+        </div>
 
-            <label for="cnh">CNH:
-                <input name="cnh" type="text" id="cnh" size="14" />
-            </label>
-            <br/>
+        <div class="control-group">
+            <label class="control-label">Data de Admissão</label>
+            <input class="control-menor" name="dataadmissao" type="date" />
+        </div>
 
-            <label for="email">E-mail:
-                <input name="email" type="email" id="email" />
-            </label>
-            <br/>
+        <div class="control-group">
+            <label class="control-label">Telefone</label>
+            <input class="control-medio" name="cpf" type="text" id="rg_uf" />
+        </div>
 
-            <label for="celular">Telefone/Celular:
-                <input name="celular" type="text" id="celular" size="14" />
-            </label>
-            <br/>
-        </fieldset>
+        <div class="control-group">
+            <label class="control-label">Celular</label>
+            <input class="control-medio" name="cpf" type="text" id="rg_uf" />
+        </div>
 
-        <fieldset id="campo2">
-            <legend>Endereço do Funcionário</legend>
-            <label>Cep:
-                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" />
-            </label>
-            <br />
-            <label>Rua:
-                <input name="rua" type="text" id="rua" size="60" />
-            </label>
-            <br/>
-            <label>Bairro:
-                <input name="bairro" type="text" id="bairro" size="40" />
-            </label>
-            <br/>
-            <label>Cidade:
-                <input name="cidade" type="text" id="cidade" size="40" />
-            </label>
-            <br/>
-            <label>Estado:
-                <input name="uf" type="text" id="uf" size="2" />
-            </label><br />
-            <label>IBGE:
-                <input name="ibge" type="text" id="ibge" size="8" />
-            </label>
-            <br/>
+        <div class="control-group">
+            <label class="control-label">E-mail</label>
+            <input class="control" name="cpf" type="text" id="rg_uf" />
+        </div>
 
-        </fieldset>
-        <br/>
+        <div class="control-group">
+            <label class="control-label">Observações</label>
+            <input class="control" name="obs" type="text" id="rg_uf" />
+        </div>
+        <br>
         <div id="btn-salvar">
             <input id="botao-salvar" type="submit" value="Salvar">
         </div>
-    </form>
+
+    </div>
+
+    <div class="section">
+        
+        <h3 id="h3-estilo">Endereço do Cliente</h3>
+
+        <div class="control-group">
+            <label class="control-label">Cep:</label>
+            <input class="control-menor" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Rua:</label>
+            <input class="control" name="rua" type="text" id="rua" />
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Bairro:</label>
+            <input class="control-medio" name="bairro" type="text" id="bairro" />
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Cidade:</label>
+            <input class="control-medio" name="cidade" type="text" id="cidade" />
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">Estado:</label>
+            <input class="control-menor" name="uf" type="text" id="uf" />
+        </div>
+
+        <div class="control-group">
+            <label class="control-label">IBGE:</label>
+            <input class="control-menor" name="ibge" type="text" id="ibge" />
+        </div>
+
+
+    </div>
+
+
+</form>
+
 
 @endsection

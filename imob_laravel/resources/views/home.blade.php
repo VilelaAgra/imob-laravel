@@ -16,11 +16,13 @@
 
     <div id="bloco-1">
         <figure id="figura">
-            <img src="{{ asset('img/logo.jpg') }}" />
+            <img src="{{ asset('img/logo.png') }}" />
             <h1 id="h1-estilo">SisImob - Soluções Imobiliárias</h1>
+            <br>
         </figure>
+        <br>
     </div>
-    
+<br>
     <nav>
         <ul class="menu">
             <li><a href="{{ route('login') }}">Home</a>
