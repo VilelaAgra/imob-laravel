@@ -15,6 +15,11 @@ Route::group(['prefix' => 'imovel', 'middleware' => ['login']], function () {
     Route::get('/','ImovelController@buscar')->name('imovel.buscar');
     Route::get('/novo', 'ImovelController@cadastrar')->name('imovel.cadastrar');
     Route::post('/salvar', 'ImovelController@salvar')->name('imovel.salvar');
+    Route::get('/editar-imovel/{id}', 'ImovelController@editar')->name('imovel.editar');
+    Route::post('/atualizar/{id}', 'ImovelController@atualizar')->name('imovel.atualizar');
+    Route::get('/listar-imovel', 'ImovelController@buscar')->name('imovel.buscar');
+    Route::get('/visualizar-imovel/{id}', 'ImovelController@visualizar')->name('imovel.visualizar');
+    Route::get('/excluir/{id}', 'ImovelController@excluir')->name('imovel.excluir');
 });
 
 //GRUPO DE ROTAS DE FUNCIONÁRIOS
