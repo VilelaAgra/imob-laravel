@@ -134,7 +134,7 @@
             
             <div class="control-group">
                 <label class="control-label">Cep:</label>
-                <input class="control-menor" name="cep" type="text" id="cep" value="" maxlength="9" onblur="pesquisacep(this.value);" />
+                <input class="control-menor" name="cep" type="text" id="cep" value="" maxlength="9" />
             </div>
 
             <div class="control-group">

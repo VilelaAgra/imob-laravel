@@ -9,7 +9,12 @@
     <link rel="stylesheet" href={{asset('css/home.css')}} type="text/css">
     <link rel="stylesheet" href={{asset('css/buscas.css')}} type="text/css">
     <link rel="stylesheet" href={{asset('css/cadastros.css')}} type="text/css">
-    <script type="text/javascript" src={{asset('css/cep.js')}}></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"> </script>
+    <script type="text/javascript" src={{asset('js\cep.js')}}></script>
+
+
+    
+    
 </head>
 
 <body>
