@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use App\Models\Imovel;
+use App\Models\Cliente;
+use App\Models\Funcionario;
+use App\Models\Proposta;
 
-
-class ImovelController extends Controller
+class PropostaController extends Controller
 {
-
-   
-// Abre a view com a tela de cadastro
-public function cadastrar() {
-    return view('imovel.cadastrar');   
+    public function cadastrar() {
+        return view('imovel.cadastrar');   
 }
 
 public function salvar(Request $request) {
@@ -25,6 +23,7 @@ public function salvar(Request $request) {
         'areatotal'         => 'required|numeric',
         'valorimovel'       => 'required|numeric',
         'valorcondominio'   => 'required|numeric',
+        'sala'              => 'required|integer',
         'quarto'            => 'required|integer',
         'suite'             => 'required|integer',
         'banheiro'          => 'required|integer',
@@ -50,10 +49,10 @@ public function salvar(Request $request) {
 
 // Abre a tela com a view buscar imovel
 
-public function editar($id) {
+public function buscarImovel($id) {
     
     $dados = ['imovel' => Imovel::find($id)];
-    return view('imovel.editar', $dados);
+    return view('proposta.selecionarFunc', $dados);
 }
 
 public function atualizar(Request $request, $id) {
@@ -64,6 +63,7 @@ public function atualizar(Request $request, $id) {
         'areatotal'         => 'required|numeric',
         'valorimovel'       => 'required|numeric',
         'valorcondominio'   => 'required|numeric',
+        'sala'              => 'required|integer',
         'quarto'            => 'required|integer',
         'suite'            => 'required|integer',
         'banheiro'          => 'required|integer',
@@ -87,7 +87,7 @@ public function atualizar(Request $request, $id) {
     return redirect()->route('imovel.buscar');
 }
 
-public function buscar(Request $request) {
+public function buscarImovel(Request $request) {
 
     //Paginação
     $exibirPorPagina = 3;
@@ -103,7 +103,7 @@ public function buscar(Request $request) {
         'imovel'    => $imovel,
         'paginacao' => $paginacao
     ];
-    return view('imovel.buscar', $dados);
+    return view('proposta.buscarImovel', $dados);
 }
 
 /** Abre a view com os dados do livro selecionado */

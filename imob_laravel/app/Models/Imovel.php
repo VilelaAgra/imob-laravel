@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Imovel extends Model
 {
 
+    protected $table = 'imovels';
+
     protected $fillable = [
         'tipoimovel',
         'classificacao',
@@ -14,7 +16,7 @@ class Imovel extends Model
         'areatotal',
         'valorimovel',
         'valorcondominio',
-        'sala',
+        'suite',
         'quarto',
         'banheiro',
         'garagem',
@@ -23,10 +25,19 @@ class Imovel extends Model
         'salaestar',
         'idadeimovel',
         'iptu',
-        'obs'
+        'obs',
+        'cep',
+        'rua',
+        'bairro',
+        'cidade',
+        'uf',
+        'ibge',
+        'lote',
+        'quadra',
+        'complemento'
     ];
 
-
-
 }
+
+
 

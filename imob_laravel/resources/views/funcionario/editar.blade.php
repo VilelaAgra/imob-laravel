@@ -3,7 +3,7 @@
 @section('conteudo_principal')
 
     <div>
-        <h2>EDITAR IMÓVEL</h2>
+        <h2>EDITAR FUNCIONÁRIO</h2>
     </div>
 
     @if ($errors->any())
@@ -15,8 +15,8 @@
     </div>
     @endif
 
-    <form action="{{route('imovel.atualizar', ['id' => $imovel['id']])}}" enctype="multipart/form-data" method="post" class="form">
-        @include('forms.imovel.form_editar_imovel')
+    <form action="{{route('funcionario.atualizar', ['id' => $funcionario['id']])}}" enctype="multipart/form-data" method="post" class="form">
+        @include('forms.funcionario.form_editar_funcionario')
     </form>
 
 @endsection

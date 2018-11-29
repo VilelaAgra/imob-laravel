@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Funcionario;
 
 class LoginController extends Controller
 {
@@ -13,8 +14,13 @@ class LoginController extends Controller
     }
 
     public function logar (Request $request){
-        if ($request->cpf == '123' && $request->senha == '123') {
-            session(['usuario' => 'Hermyson']);
+        $dados = Funcionario::Where('cpf', $request->cpf)->first();
+        
+        if ($request->cpf ==  $dados->cpf && $request->senha == $dados->senha) {
+                $isADM = $dados->funcao;
+                if($isADM = "Administrador"){
+                    session(['usuario' => 'Administrador']);
+                }
             return redirect()->route('home');
         }
         return redirect()->route('login')->with('erro', 'Senha ou Login inválido');
@@ -26,3 +32,4 @@ class LoginController extends Controller
         return redirect()->route('login'); 
     }
 }
+

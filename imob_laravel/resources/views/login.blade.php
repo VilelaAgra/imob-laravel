@@ -6,6 +6,16 @@
     <title>SisImob - Sistema Imobiliario</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo asset('css/login.css')?>" type="text/css">
+    <script type="text/javascript" src={{asset('js\cpf.js')}}></script>
+    <script>
+        function formatar(mascara, documento){
+            var i = documento.value.length;
+            var saida = mascara.substring(0,1);
+            var texto = mascara.substring(i);
+            if (texto.substring(0,1) != saida){
+                documento.value += texto.substring(0,1);
+                }}
+    </script>
     
 
 </head>
@@ -28,7 +38,7 @@
                 <div id="lgn-txt">LOGIN</div>
                 
                 <div class="campos_input" #id="usuario_input"> 
-                    <input type="text" name='cpf' id="cpf" placeholder="CPF"/>
+                    <input type="text" name='cpf' id="cpf" placeholder="CPF" maxlength="14" onkeypress="formatar('###.###.###-##', this);"/>
                 </div>
                 
                 <div class="campos_input" #id="senha_input">

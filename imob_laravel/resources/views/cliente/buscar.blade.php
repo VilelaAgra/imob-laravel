@@ -1,43 +1,42 @@
 @extends('home')
 @section('conteudo_principal')
 
-    <div id="busca">
-        <label for="perfil">Perfil:
-            <select name="perfil" id="perfil">
-                <option value="">Selecione</option>
-                <option value="comp">Comprador</option>
-                <option value="prop">Proprietário</option>
-            </select>
-        </label>
-        <br/>
-
-        <label for="nome-cli">Nome do Cliente:
-            <input name="nome-cli" type="text" id="nome-cli" size="50" />
-        </label>
-        <br/>
-
-        <label for="cpf">CPF:
-            <input name="cpf" type="text" id="cpf" size="14" />
-        </label>
-        <br/>
-
-        <button type="submit" title="Procurar" >Procurar</button>
-
-    </div>
-
     <div id="resultado-busca">
+{{-- 
+        <!-- TITULO -->
+			<div class="page-header">
+				<h1>{{$imovel->Classificação}}</h1>
+				<span class="label label-primary">{{$imovel->Situação}}</span>
+				<span class="label label-default">{{$livro->Tipo}}</span>
+			</div>
 
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
-        <p>Resultados ficarão aqui</p>
+		</div> --}}
+	</div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th>CódigoCliente</th>    
+            <th>Tipo</th>
+            <th width="10%">Opções</th>
+            </tr>
+        </thead>
+        <!-- DADOS -->
+        <tbody>
+            @foreach($cliente as $cliente)
+            <tr>
+                <td>{{$cliente['id']}}</td>
+                <td>{{$cliente['situacao']}}</td>
+                <td>
+                    <a href="{{route('cliente.visualizar', ['id' => $cliente['id']])}}">Visualizar</a>
+                    <a href="{{route('cliente.editar', ['id' => $cliente['id']])}}">Editar</a>
+                    <a href="{{route('cliente.excluir', ['id' => $cliente['id']])}}">Excluir</a>
+                </td>
+            </tr>
+            @endforeach	 
+        </tbody>
+        <!-- DADOS [FIM] -->
+    </table>
 
+    {{$paginacao}}
     </div>
-
 @endsection

@@ -23,8 +23,7 @@
                 <td>{{$imovel['classificacao']}}</td>
                 <td>{{$imovel['tipoimovel']}}</td>
                 <td>
-                    <a href="{{route('imovel.editar', ['id' => $imovel['id']])}}">Editar</a>
-                    <a href="{{route('imovel.excluir', ['id' => $imovel['id']])}}">Excluir</a>
+                    <a href="{{route('proposta.buscarImovel', ['id' => $imovel['id']])}}">selecionar Imovel</a>
                 </td>
             </tr>
             @endforeach	 

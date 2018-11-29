@@ -3,6 +3,8 @@
 
     <div id="resultado-busca">
 
+        {{ $data }}
+
 	</div>
     <table class="table table-hover">
         <thead>
@@ -23,8 +25,7 @@
                 <td>{{$imovel['classificacao']}}</td>
                 <td>{{$imovel['tipoimovel']}}</td>
                 <td>
-                    <a href="{{route('imovel.editar', ['id' => $imovel['id']])}}">Editar</a>
-                    <a href="{{route('imovel.excluir', ['id' => $imovel['id']])}}">Excluir</a>
+                    <a href="{{route('imovel.selecionarImovel', ['id' => $imovel['id']])}}">selecionar Imovel</a>
                 </td>
             </tr>
             @endforeach	 
